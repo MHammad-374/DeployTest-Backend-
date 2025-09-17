@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const {getUsers} = require("../controllers/users");
+const {getUsers, delUsers} = require("../controllers/users");
 
 // Routes
 // router.get("/", userController.getUsers);        // Get all users
@@ -10,6 +10,7 @@ const {getUsers} = require("../controllers/users");
 // router.delete("/:id", userController.deleteUser); // Delete user
 
 router.get("/", getUsers)
+router.get("/name", delUsers)
 
 
 module.exports = router;
