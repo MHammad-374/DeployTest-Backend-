@@ -13,7 +13,7 @@ app.use(morgan("dev"))
 // app.use(cors())
 app.use(cors({
   // origin: "http://localhost:3000", // Only allow React frontend
-  origin: "https://deploytestfrontend.netlify.app", // Only allow React frontend
+  origin: process.env.FRONTEND_URL, // Only allow React frontend
   // methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
