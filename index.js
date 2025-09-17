@@ -12,21 +12,14 @@ app.use(morgan("dev"))
 
 // app.use(cors())
 app.use(cors({
-  // origin: "http://localhost:3000", // Only allow React frontend
-  origin: process.env.FRONTEND_URL, // Only allow React frontend
-  // methods: ["GET", "POST", "PUT", "DELETE"],
+  origin: process.env.FRONTEND_URL,
   credentials: true
 }));
 
 
 const port = process.env.PORT
 
-mongoose.connect(process.env.MONGO_URI, 
-//   {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
-// }
-)
+mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.error(err));
 
